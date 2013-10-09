@@ -5,8 +5,6 @@ Ole Martin Bjørndalen
 
 \30. november 2013
 
-(Press space/b or down/up)
-
 
 Bottle
 ------

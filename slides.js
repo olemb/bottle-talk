@@ -33,11 +33,13 @@ function prev() {
 function on_keydown(event)
 {
     switch(event.keyCode) {
+    case 33:  // PgUp
     case 38:  // Up
     case 37:  // Left
     case 66:  // b
         prev();
         break;
+    case 34:  // PgDn
     case 40:  // Down
     case 39:  // Right
     case 32:  // Space
