@@ -74,7 +74,8 @@ Request / response
 
     from bottle import request, response
 
-    ...
+    @get('/something')
+    def something():
         cookie = request.get_cookie():
         ...
         response.content_type = 'text/html
