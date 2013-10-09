@@ -54,11 +54,11 @@ GET / POST
 
     from bottle import get, post, request
     
-    @get('/login') # or @route('/login', method='GET')
+    @get('/login')
     def login():
-        return '...'  # login form
+        return 'login_form_here'
 
-    @post('/login') # or @route('/login', method='POST')
+    @post('/login')
     def do_login():
         username = request.forms.get('username')
         password = request.forms.get('password')
