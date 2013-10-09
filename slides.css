@@ -3,6 +3,8 @@
 :Contact: cskeeters@nciinc.com
 
 Stylesheet for use with Docutils/rst2html.
+
+Changes by Ole Martin Bjørndalen marked with "OLEMB".
 */
 
 html {
@@ -39,7 +41,7 @@ sub {
 }
 
 img {
-  width: auto\9;
+  width: auto;
   height: auto;
   max-width: 100%;
   vertical-align: middle;
@@ -109,8 +111,10 @@ body {
   margin: 40px;
   margin-right: auto;
   margin-left: auto;
-  width: 80ex;  // OLEMB
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  /* OLEMB: changed width */
+  width: 80ex;
+  /* OLEMB: this somehow caused Chromium to left-align the body */
+  /* font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; */
   font-size: 14px;
   line-height: 20px;
   color: #333333;
