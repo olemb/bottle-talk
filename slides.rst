@@ -15,9 +15,6 @@ Bottle
 
 * kjører på WSGI
 
-* Flask: mer eller mindre det samme men bruker eksisterende
-  biblioteker
-
 http://bottlepy.org/
 
 
@@ -47,7 +44,7 @@ Template og mer avansert ruting
     def index(name='Stranger'):
         return template('Hello {{name}}!', name=name)
 
-Du kan bruke andre template-bibloteker.
+Du kan bruke andre template-bibloteker. (Jinja2!)
 
 
 GET / POST
@@ -262,6 +259,24 @@ JSON-RPC
 http://github.com/olemb/bottle_jsonrpc
 
 
+Flask
+-----
+
+Mye det samme, men basert på Werkzeug og Jinja2.
+
+.. code-block:: bash
+
+    from flask import Flask
+    app = Flask(__name__)
+
+    @app.route("/")
+    def hello():
+        return "Hello World!"
+
+    if __name__ == "__main__":
+        app.run()
+
+
 Slutt
 -----
 
@@ -270,6 +285,8 @@ Slutt
     $ sudo pip install bottle
 
     $ sudo apt-get install bottle
+
+    $ wget http://raw.github.com/defnull/bottle/master/bottle.py
 
 http://bottlepy.org/
 
