@@ -104,6 +104,8 @@ Statiske filer
 
 .. code-block:: python
 
+    from bottle import static_file
+
     @route('/static/<filepath:path>')
     def server_static(filepath):
         return static_file(filepath,
