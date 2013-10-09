@@ -32,8 +32,8 @@ Hello
     run(host='localhost', port=8080)
 
 
-Template og mer avansert ruting
--------------------------------
+Litt mer avansert
+-----------------
 
 .. code-block:: python
 
