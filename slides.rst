@@ -159,19 +159,18 @@ JSON
 Returverdier
 ------------
 
-* dictionary => JSON
-
-* '', False, None => Content-Length: 0
-
-* unicode string => UTF-8 (or Content-Type)
-
-* byte string => binary data
-
-* file object => result of .read()
-
-* iterable, generator => returns result
-
-* HTTPError, HTTPResponse
+===============  ============
+Returverdi       Resultat
+===============  ============
+dictionary       JSON
+'', False, None  Content-Length: 0
+unicode string   UTF-8 (or Content-Type)
+byte string      data
+file object      result of .read()
+iterable         
+HTTPError        error
+HTTPResponse     (response)
+===============  ============
 
 
 App
