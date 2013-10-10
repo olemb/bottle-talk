@@ -12,7 +12,7 @@ HERE = `python -c "import os.path; print(os.path.relpath('$(HERE_ABS)'))"`
 
 # Figure out which program to use. This is messy.
 RST2HTML_PATH = `which rst2html`
-ifeq ($(strip $(RST2HTML)),)
+ifeq ($(strip $(RST2HTML_PATH)),)
   # Use debian package installed version.
   RST2HTML = rst2html.py
 else
