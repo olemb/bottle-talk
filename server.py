@@ -26,7 +26,11 @@ def get_file_paths():
 
 @get('/slides.html')
 def slides():
-    print('Dynamic!')
+    if os.popen('which rst2html').read():
+        program = 'rst2html'
+    else:
+        program = 'rst2html.py'
+    
     return os.popen('rst2html'
                     ' --stylesheet=slider/slides.css'
                     ' --link-stylesheet'
