@@ -85,14 +85,14 @@ Query
 
 ::
 
-    http://movie_database.somewhere/search?name=King+Kong
+    http://movie_database.somewhere/search?title=King+Kong
 
 .. code-block:: python
 
     @get('/search')
     def movie_search():
-        name = request.query.name
-        if name == 'King Kong':
+        title = request.query.title
+        if title == 'King Kong':
             ...
 
 
