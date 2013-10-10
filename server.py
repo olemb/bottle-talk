@@ -78,11 +78,16 @@ file_list_template = SimpleTemplate("""
 
 @get('/')
 def file_list():
-    return file_list_template.render(files=get_file_paths())
+    print('((((')
+    r = file_list_template.render(files=['test', 'fisk'])
+    # get_file_paths()
+    print('))))')
+    return r
 
 if __name__ == '__main__':
     bottle.debug(True)
     bottle.run(host='', reloader=True)
 else:
+    os.chdir(os.path.dirname(__file__))
     application = bottle.default_app()
 
