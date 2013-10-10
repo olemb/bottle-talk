@@ -75,7 +75,7 @@ def slides():
 @get('/<path:path>')
 def files(path):
     ext = os.path.splitext(path)[1]
-    if ext in ['.rst', '.txt', '.sh']:
+    if ext in ['.rst', '.txt', '.sh', '.py']:
         mimetype = 'text/plain'
     else:
         mimetype = None
