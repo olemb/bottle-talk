@@ -7,7 +7,7 @@ Very minimal system for HTML slide shows from reStructuredText.
 Requirements
 ------------
 
-Requires rst2html (for generating the html file).
+Requires ``rst2html`` (for generating the html file).
 
 Works in Chrome / Chromiun, Firefox, Safari and Explorer 9. No support
 for Explorer 8 or lower.
@@ -64,6 +64,12 @@ change these to style and rewrite the slide show as you like.
 The default ``template.txt`` includes an extra style sheet and some
 images in the template as a starting point. These reside in a
 subfolder for easy reuse.
+
+
+License
+-------
+
+`MIT <http://en.wikipedia.org/wiki/MIT_License>`_
 
 
 Todo
