@@ -1,7 +1,17 @@
 #!/usr/bin/env python
 import os
+import fnmatch
 import bottle
 from bottle import get, response, static_file, SimpleTemplate
+
+def ignore_file(filename):
+    # Can't use .gitignore here because it ignores slides.html
+    # and not .git and .gitignore.
+    for pattern in ['*.pyc', '*~', '.gitignore']:
+        if fnmatch.fnmatch(pattern, filename):
+            return True
+
+    return False
 
 def get_file_paths():
     files = []
@@ -10,6 +20,9 @@ def get_file_paths():
             dirnames.remove('.git')
 
         for filename in filenames:
+            if ignore_file(filename):
+                continue
+
             if filename.endswith('.pyc'):
                 continue
 
