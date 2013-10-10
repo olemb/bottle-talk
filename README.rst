@@ -35,15 +35,24 @@ Make targets::
 Viewing the slideshow
 ---------------------
 
-* next slide: page down, right arrow, down arrow, space bar, left mouse button
-
-* previous slide: page up, left arrow, up arrow, b
-
-* first slide: home
-
-* last slide: end
-
 Switch the browser to fullscreen and zoom until it looks about right.
+
+You can page through the slides with:
+
+* page down / page up
+
+* right arrow / left arrow
+
+* down arrow / up arrow
+
+* space bar / b
+
+* left mouse button
+
+* scroll wheel
+
+In addition home and end can be used to go to the first and last slide
+respectively.
 
 Multitouch devices will get all slides on one page. (``slides.html``
 is shown unchanged.)
