@@ -26,12 +26,7 @@ def get_file_paths():
 
 @get('/slides.html')
 def slides():
-    if os.popen('which rst2html').read():
-        program = 'rst2html'
-    else:
-        program = 'rst2html.py'
-    
-    return os.popen(program + ' --template=template.txt slides.rst')
+    return os.popen('slider/make_slides.sh')
 
 @get('/<path:path>')
 def files(path):

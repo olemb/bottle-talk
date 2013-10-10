@@ -1,10 +1,5 @@
 #!/bin/bash
 
-which rst2html >/dev/null
-if [ $? == 0 ]
-    program=rst2html.py
-then
-    program=rst2html
-fi
-
+program=rst2html
+which $program >/dev/null || program=rst2html.py
 $program --template=template.txt slides.rst
