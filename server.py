@@ -43,6 +43,10 @@ file_list_template = SimpleTemplate("""
 
 <p><a href="slides.html">Start presentation</a></p>
 
+<p><a href="server.py">server.py</a></p>
+
+<h2>Files</h2>
+
 <ul>
   % for file in files:
     <li><a href="{{file}}">{{file}}</a></li>
