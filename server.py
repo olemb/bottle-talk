@@ -79,7 +79,7 @@ def files(path):
 @get('/')
 def file_list():
     print('((((')
-    r = file_list_template.render(files=['test', 'fisk'])
+    r = file_list_template.render(files=get_file_paths())
     # get_file_paths()
     print('))))')
     return r
