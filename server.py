@@ -56,4 +56,4 @@ def file_list():
 
 if __name__ == '__main__':
     bottle.debug(True)
-    bottle.run(reloader=True)
+    bottle.run(host='', reloader=True)
