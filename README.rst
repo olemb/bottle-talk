@@ -1,7 +1,8 @@
 reStructuredText Slide Show
 ===========================
 
-Very minimal system for HTML slide shows from reStructuredText.
+Very minimal system for HTML slide shows from `reStructuredText
+<http://en.wikipedia.org/wiki/ReStructuredText>`_.
 
 
 Requirements
