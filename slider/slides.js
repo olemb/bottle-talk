@@ -97,6 +97,8 @@ function is_touch_device() {
 
 function init() {
     if(is_touch_device()) {
+        // Multitouch devices don't have buttons for paging
+        // so let's give them everything on one page.
         return;
     }
 

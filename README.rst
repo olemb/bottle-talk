@@ -45,6 +45,9 @@ Viewing the slideshow
 
 Switch the browser to fullscreen and zoom until it looks about right.
 
+Multitouch devices will get all slides on one page. (``slides.html``
+is shown unchanged.)
+
 
 How it works
 ------------
