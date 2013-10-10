@@ -84,5 +84,5 @@ if __name__ == '__main__':
     bottle.debug(True)
     bottle.run(host='', reloader=True)
 else:
-    application = bottle.default_application()
+    application = bottle.default_app()
 
