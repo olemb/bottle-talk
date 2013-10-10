@@ -27,7 +27,12 @@ file_list_template = SimpleTemplate("""
 
 <ul>
   % for file in files:
-    <li><a href="{{file}}">{{file}}</a></li>
+    <li>
+       <a href="{{file}}">{{file}}</a>
+       % if file == 'slides.html':
+           (dynamically generated)
+       % end
+    </li>
   % end
 </ul>
 </div>
