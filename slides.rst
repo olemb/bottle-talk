@@ -201,7 +201,7 @@ Apache eller ikke Apache
         # Standalone web server
         bottle.run()
     else:
-        # Running under WSGI
+        # Running under another web server
         application = bottle.default_app()
 
 
