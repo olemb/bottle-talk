@@ -202,6 +202,8 @@ Lurt for litt større applikasjoner og for gjenbrukbarhet.
     def hello():
         return 'Hello World'
 
+    app.mount("/demo", app)
+
 
 Debug og auto-reloading
 -----------------------
