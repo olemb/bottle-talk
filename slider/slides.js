@@ -71,6 +71,14 @@ function on_mousedown(event) {
     case 2:  // Right button
         // prev();
         break;
+
+    // Down should be next()
+    case 5:  // Scroll (up or down?)
+        next();
+        break;
+    case 6:
+        prev();
+        break;
     }
 }
 
