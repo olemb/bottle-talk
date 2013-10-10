@@ -164,9 +164,9 @@ Returverdi       Resultat
 ===============  ============
 dictionary       JSON
 '', False, None  Content-Length: 0
-unicode string   UTF-8 (or Content-Type)
-byte string      data
-file object      result of .read()
+unicode string   UTF-8 (or response.content_type / .charset)
+byte string      binary data
+file object      file.read()
 iterable         
 HTTPError        error
 HTTPResponse     (response)
