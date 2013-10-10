@@ -12,15 +12,16 @@ HERE = `python -c "import os.path; print(os.path.relpath('$(HERE_ABS)'))"`
 
 # Figure out which program to use. This is messy.
 RST2HTML_PATH = `which rst2html`
-ifneq ($(RST2HTML_PATH), '')
-# Use debian package installed version.
-RST2HTML = rst2html
+ifeq ((strip $(RST2HTML)),)
+  # Use debian package installed version.
+  RST2HTML = rst2html
 else
-# Fall back on the pip installed version.
-RST2HTML = rst2html.py
+  # Fall back on the pip installed version.
+  RST2HTML = rst2html.py
 endif
 
 slides.html: slides.rst template.txt
+	echo $(RST2HTML_PATH)
 	$(RST2HTML) --template=template.txt slides.rst >slides.html
 
 view: slides.html
