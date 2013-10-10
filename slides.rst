@@ -15,6 +15,8 @@ Bottle
 
 * kjører på WSGI
 
+* Python 2 / 3
+
 http://bottlepy.org/
 
 
@@ -27,7 +29,7 @@ Hello
 
     @route('/')
     def index():
-        return 'Hello Bottle!'
+        return 'Hello World!'
 
     run(host='localhost', port=8080)
 
@@ -52,19 +54,15 @@ GET / POST
 
 .. code-block:: python
 
-    from bottle import get, post, request
+    from bottle import get, post
     
     @get('/login')
     def login():
-        return 'login_form_here'
+        ...
 
     @post('/login')
     def do_login():
-        username = request.forms.get('username')
-        password = request.forms.get('password')
         ...
-
-Det finnes mer avansert form-håndtering.
 
 
 Request / response
@@ -87,14 +85,32 @@ Query
 
 ::
 
-    http://some.server/get_data?id=22&page=2
+    http://movie_database.somewhere/search?name=King+Kong
 
 .. code-block:: python
 
-    @get('/get/data')
-    def get_data():
-        forum_id = request.query.id
-        page = request.query.page or '1'
+    @get('/search')
+    def movie_search():
+        name = request.query.name
+        if name == 'King Kong':
+            ...
+
+
+Forms
+-----
+
+.. code-block:: python
+
+    @get('/login')
+    def login():
+        ...
+
+    @post('/login')
+    def login():
+        username = request.forms.get('username')
+        password = request.forms.get('password')
+        if check_login(username, password):
+            ...
 
 
 Statiske filer
@@ -158,8 +174,8 @@ Returverdier
 * HTTPError, HTTPResponse
 
 
-På Apache (med WSGI)
---------------------
+Apache eller ikke Apache
+------------------------
 
 .. code-block:: python
 
@@ -169,12 +185,12 @@ På Apache (med WSGI)
         # Standalone web server
         bottle.run(reloader=True)
     else:
-        # Running under WSGI (probably Apache)
+        # Running under WSGI
         application = bottle.default_app()
 
 
-Lokale rutinger
----------------
+App
+---
 
 Lurt for litt større applikasjoner og for gjenbrukbarhet.
 
