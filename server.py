@@ -77,6 +77,8 @@ def files(path):
     ext = os.path.splitext(path)[1]
     if ext in ['.rst', '.txt', '.sh', '.py']:
         mimetype = 'text/plain'
+    elif ext == ['.js']:
+        mimetype = 'application/javascript'
     else:
         mimetype = None
     return static_file(path, root='.', mimetype=mimetype)
