@@ -38,6 +38,10 @@ def files(path):
     return static_file(path, '.')
 
 file_list_template = SimpleTemplate("""
+<!doctype html>
+<html>
+<head><title>Bottle</title></head>
+<body>
 
 <h1>Bottle!</h1>
 
@@ -52,6 +56,9 @@ file_list_template = SimpleTemplate("""
     <li><a href="{{file}}">{{file}}</a></li>
   % end
 </ul>
+
+</body>
+</html>
 """)
 
 @get('/')

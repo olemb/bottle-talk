@@ -16,6 +16,9 @@ function show(num) {
 
     slides[num].style.display = 'block';
     current = num;
+
+    var slide_title = slides[num].querySelector('h1').innerHTML;
+    document.title = slide_title;
 }
 
 function first() {
@@ -66,4 +69,3 @@ function init() {
 
 
 window.onload = init;
-
