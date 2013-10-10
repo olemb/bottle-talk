@@ -14,15 +14,8 @@ slides.html: slides.rst template.txt
 	--link-stylesheet --template=template.txt \
 	slides.rst >slides.html
 
-tst:
-	@echo $(HERE)
-
 view: slides.html
 	chromium-browser >/dev/null 2>/dev/null --new-window slides.html
-
-publish:
-	rsync -avt --exclude='.git' --exclude='.gitignore' \
-        ./ nerdly.info:web/bottle/
 
 clean:
 	rm -f slides.html
