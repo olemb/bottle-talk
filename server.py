@@ -31,7 +31,7 @@ def slides():
     else:
         program = 'rst2html.py'
     
-    return os.popen('rst2html'
+    return os.popen(program,
                     ' --stylesheet=slider/slides.css'
                     ' --link-stylesheet'
                     ' --template=template.txt'
