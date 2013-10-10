@@ -90,7 +90,16 @@ function on_mousewheel(event) {
     }
 }
 
+function is_touch_device() {
+  return 'ontouchstart' in window // works on most browsers 
+        || 'onmsgesturechange' in window; // works on ie10
+};
+
 function init() {
+    if(is_touch_device()) {
+        return;
+    }
+
     slides = document.querySelectorAll(".section");
 
     document.addEventListener('keydown', on_keydown, false);
@@ -101,13 +110,13 @@ function init() {
         var body = document.getElementsByTagName('body')[0];
         swipe(body, function(direction) {
             if(direction == 'left') {
-                next();
-            } else if(direction == 'right') {
-                prev();
-            } else if(direction == 'up') {
                 last();
-            } else if(direction == 'down') {
+            } else if(direction == 'right') {
                 first();
+            } else if(direction == 'up') {
+                prev();
+            } else if(direction == 'down') {
+                next();
             }
         });
     }
