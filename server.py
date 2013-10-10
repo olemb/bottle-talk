@@ -45,9 +45,13 @@ file_list_template = SimpleTemplate("""
 <link rel="stylesheet" href="slider/slides.css" type="text/css" />
 <body>
 
+<div id="uit_triangle"><img src="uit/triangle.png"></div>
+<div id="uit_logo"><img src="uit/logo.png"></div>
+
+<div class="section">
 <h1>Bottle!</h1>
 
-<p><a href="slides.html">Start presentation</a></p>
+<p><a href="slides.html" style="font-size: 400%">Start presentation</a></p>
 
 <p><a href="server.py">server.py</a></p>
 
@@ -58,6 +62,7 @@ file_list_template = SimpleTemplate("""
     <li><a href="{{file}}">{{file}}</a></li>
   % end
 </ul>
+</div>
 
 </body>
 </html>
