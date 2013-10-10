@@ -74,15 +74,16 @@ def slides():
 
 @get('/<path:path>')
 def files(path):
-    return static_file(path, '.')
+    ext = os.path.splitext(path)[1]
+    if ext in ['.rst', '.txt', '.sh']:
+        mimetype = 'text/plain'
+    else:
+        mimetype = None
+    return static_file(path, root='.', mimetype=mimetype)
 
 @get('/')
 def file_list():
-    print('((((')
-    r = file_list_template.render(files=get_file_paths())
-    # get_file_paths()
-    print('))))')
-    return r
+    return file_list_template.render(files=get_file_paths())
 
 if __name__ == '__main__':
     bottle.debug(True)
