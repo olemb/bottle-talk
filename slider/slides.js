@@ -106,21 +106,6 @@ function init() {
     document.addEventListener('mousedown', on_mousedown, false);
     document.addEventListener('mousewheel', on_mousewheel, false);
 
-    if(typeof swipe !== 'undefined') {
-        var body = document.getElementsByTagName('body')[0];
-        swipe(body, function(direction) {
-            if(direction == 'left') {
-                last();
-            } else if(direction == 'right') {
-                first();
-            } else if(direction == 'up') {
-                prev();
-            } else if(direction == 'down') {
-                next();
-            }
-        });
-    }
-
     first();
 }
 
