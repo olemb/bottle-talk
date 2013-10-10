@@ -104,6 +104,10 @@ function init() {
                 next();
             } else if(direction == 'right') {
                 prev();
+            } else if(direction == 'up') {
+                first();
+            } else if(direction == 'down') {
+                last();
             }
         });
     }
