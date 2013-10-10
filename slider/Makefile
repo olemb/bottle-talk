@@ -11,8 +11,7 @@ HERE_ABS = $(dir $(THIS_MAKEFILE))
 HERE = `python -c "import os.path; print(os.path.relpath('$(HERE_ABS)'))"`
 
 slides.html: slides.rst template.txt
-	rst2html --stylesheet=$(HERE)/slides.css \
-	--link-stylesheet --template=template.txt \
+	rst2html --template=template.txt \
 	slides.rst >slides.html
 
 view: slides.html
