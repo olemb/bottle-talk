@@ -43,6 +43,8 @@ Viewing the slideshow
 
 * last slide: end
 
+Switch the browser to fullscreen and zoom until it looks about right.
+
 
 How it works
 ------------
