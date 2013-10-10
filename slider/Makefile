@@ -1,6 +1,3 @@
-# Include this file in 
-#
-#
 # Todo: use default template.txt if one is not found.
 # 
 
@@ -10,19 +7,8 @@ THIS_MAKEFILE := $(call where-am-i)
 HERE_ABS = $(dir $(THIS_MAKEFILE))
 HERE = `python -c "import os.path; print(os.path.relpath('$(HERE_ABS)'))"`
 
-# Figure out which program to use. This is messy.
-RST2HTML_PATH = `which rst2html`
-ifeq ($(strip $(RST2HTML_PATH)),)
-  # Use debian package installed version.
-  RST2HTML = rst2html.py
-else
-  # Fall back on the pip installed version.
-  RST2HTML = rst2html
-endif
-
 slides.html: slides.rst template.txt
-	echo $(RST2HTML_PATH)
-	$(RST2HTML) --template=template.txt slides.rst >slides.html
+	$(HERE)/make_slides.sh >slides.html
 
 view: slides.html
 	chromium-browser >/dev/null 2>/dev/null --new-window slides.html
