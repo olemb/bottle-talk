@@ -100,13 +100,10 @@ function init() {
     if(typeof swipe !== 'undefined') {
         var body = document.getElementsByTagName('body')[0];
         swipe(body, function(direction) {
-            switch(direction) {
-            case 'left':
-                prev();
-                break;
-            case' right':
+            if(direction == 'left') {
                 next();
-                break;
+            } else if(direction == 'right') {
+                prev();
             }
         });
     }

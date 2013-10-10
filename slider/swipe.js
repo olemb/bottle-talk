@@ -28,7 +28,7 @@ swipe = function(element, callback) {
     // make sure its ID is passed in the event call placed in the element declaration, like:
     // <div id="picture-frame" ontouchstart="touchStart(event,'picture-frame');"  ontouchend="touchEnd(event);" ontouchmove="touchMove(event);" ontouchcancel="touchCancel(event);">
     
-    function touchStart(event,passedName) {
+    var touchStart = function(event,passedName) {
         // disable the standard ability to select the touched object
         event.preventDefault();
         // get the total number of fingers touching the screen
@@ -47,7 +47,7 @@ swipe = function(element, callback) {
         }
     }
     
-    function touchMove(event) {
+    var touchMove = function(event) {
         event.preventDefault();
         if ( event.touches.length == 1 ) {
             curX = event.touches[0].pageX;
@@ -57,7 +57,7 @@ swipe = function(element, callback) {
         }
     }
     
-    function touchEnd(event) {
+    var touchEnd = function(event) {
         event.preventDefault();
         // check to see if more than one finger was used and that there is an ending coordinate
         if ( fingerCount == 1 && curX != 0 ) {
@@ -77,7 +77,7 @@ swipe = function(element, callback) {
         }
     }
     
-    function touchCancel(event) {
+    var touchCancel = function(event) {
         // reset the variables back to default values
         fingerCount = 0;
         startX = 0;
@@ -94,7 +94,7 @@ swipe = function(element, callback) {
         triggerElementId = null;
     }
     
-    function caluculateAngle() {
+    var caluculateAngle = function() {
         var X = startX-curX;
         var Y = curY-startY;
         var Z = Math.round(Math.sqrt(Math.pow(X,2)+Math.pow(Y,2))); //the distance - rounded - in pixels
@@ -103,7 +103,7 @@ swipe = function(element, callback) {
         if ( swipeAngle < 0 ) { swipeAngle =  360 - Math.abs(swipeAngle); }
     }
     
-    function determineSwipeDirection() {
+    var determineSwipeDirection = function() {
         if ( (swipeAngle <= 45) && (swipeAngle >= 0) ) {
             swipeDirection = 'left';
         } else if ( (swipeAngle <= 360) && (swipeAngle >= 315) ) {
@@ -117,14 +117,18 @@ swipe = function(element, callback) {
         }
     }
     
-    function processingRoutine() {
+    var processingRoutine = function() {
         callback(swipeDirection);
+    }
+
+    var add = function(name, handler) {
+        document.addEventListener(name, handler, false);
     }
 
     // Todo: this ID must be selectable by the user.
     element.id = 'swipe_element';
-    element.ontouchstart = function(event) { touchStart(event, element.id); }
-    element.ontouchend = function(event) { touchStart(event); }
-    element.ontouchmove = function(event) { touchMove(event); }
-    element.ontouchcancel = function(event) { touchCancel(event); }
+    add('touchstart', function(event) { touchStart(event, element.id); });
+    add('touchend', function(event) { touchEnd(event); });
+    add('touchmove', function(event) { touchMove(event); });
+    add('touchcancel', function(event) { touchCancel(event); });
 }
