@@ -1,7 +1,6 @@
 %(head_prefix)s
 %(head)s
 
-<script src="slider/swipe.js" type="text/javascript"></script>
 <script src="slider/slides.js" type="text/javascript"></script>
 <link rel="stylesheet" href="uit/uit.css" type="text/css" />
 <link rel="stylesheet" href="slider/slides.css" type="text/css" />
