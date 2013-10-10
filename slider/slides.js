@@ -18,8 +18,12 @@ function show(num) {
     current = num;
 }
 
-function start() {
+function first() {
     show(0);
+}
+
+function last() {
+    show(slides.length - 1);
 }
 
 function next() {
@@ -45,13 +49,19 @@ function on_keydown(event)
     case 32:  // Space
         next();
         break;
+    case 36:  // Home
+        first();
+        break;
+    case 35:  // End
+        last();
+        break;
     }
 }
 
 function init() {
     slides = document.querySelectorAll(".section");
     document.addEventListener('keydown', on_keydown, false);
-    start();
+    first();
 }
 
 
