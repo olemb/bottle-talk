@@ -97,8 +97,21 @@ function init() {
     document.addEventListener('mousedown', on_mousedown, false);
     document.addEventListener('mousewheel', on_mousewheel, false);
 
+    if(typeof swipe !== 'undefined') {
+        var body = document.getElementsByTagName('body')[0];
+        swipe(body, function(direction) {
+            switch(direction) {
+            case 'left':
+                prev();
+                break;
+            case' right':
+                next();
+                break;
+            }
+        });
+    }
+
     first();
 }
-
 
 window.onload = init;
