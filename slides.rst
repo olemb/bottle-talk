@@ -13,7 +13,7 @@ Bottle
 
 * en fil, ingen eksterne avhengigheter (lett å bundle)
 
-* kjører på WSGI
+* kjører på WSGI ("whisky")
 
 * Python 2 / 3
 
