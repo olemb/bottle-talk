@@ -299,14 +299,8 @@ Mye det samme, men basert på Werkzeug og Jinja2.
 Slutt
 -----
 
-.. code-block:: bash
-
-    $ sudo pip install bottle
-
-    $ sudo apt-get install bottle
-
-    $ wget http://raw.github.com/defnull/bottle/master/bottle.py
-
 http://bottlepy.org/
 
 http://github.com/defnull/bottle/
+
+`server.py <server.py>`_

@@ -41,6 +41,8 @@ file_list_template = SimpleTemplate("""
 <!doctype html>
 <html>
 <head><title>Bottle</title></head>
+<link rel="stylesheet" href="uit/uit.css" type="text/css" />
+<link rel="stylesheet" href="slider/slides.css" type="text/css" />
 <body>
 
 <h1>Bottle!</h1>
