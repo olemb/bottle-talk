@@ -61,9 +61,25 @@ function on_keydown(event)
     }
 }
 
+function on_mousedown(event) {
+    button = event.button;
+
+    switch(button) {
+    case 0:  // Left button
+        next();
+        break;
+    case 2:  // Right button
+        // prev();
+        break;
+    }
+}
+
 function init() {
     slides = document.querySelectorAll(".section");
+
     document.addEventListener('keydown', on_keydown, false);
+    document.addEventListener('mousedown', on_mousedown, false);
+
     first();
 }
 
