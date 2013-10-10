@@ -82,11 +82,20 @@ function on_mousedown(event) {
     }
 }
 
+function on_mousewheel(event) {
+    if(event.wheelDeltaY < 0) {
+        next();
+    } else {
+        prev();
+    }
+}
+
 function init() {
     slides = document.querySelectorAll(".section");
 
     document.addEventListener('keydown', on_keydown, false);
     document.addEventListener('mousedown', on_mousedown, false);
+    document.addEventListener('mousewheel', on_mousewheel, false);
 
     first();
 }
