@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 import os
 import fnmatch
+import mimetypes
 import bottle
 from bottle import get, response, static_file, SimpleTemplate
 
@@ -75,12 +76,10 @@ def slides():
 @get('/<path:path>')
 def files(path):
     ext = os.path.splitext(path)[1]
-    if ext in ['.rst', '.txt', '.sh', '.py']:
+    if ext in ['.rst', '']:
         mimetype = 'text/plain'
-    elif ext == ['.js']:
-        mimetype = 'application/javascript'
     else:
-        mimetype = None
+        mimetype = mimetypes.guess_type(path)[0]
     return static_file(path, root='.', mimetype=mimetype)
 
 @get('/')
