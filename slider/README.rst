@@ -1,6 +1,12 @@
 reStructuredText Slide Show
 ===========================
 
+Very minimal system for HTML slide shows from rst.
+
+
+Requirements
+------------
+
 Requires rst2html (for generating the html file).
 
 No support for Explorer 8 or lower.
