@@ -1,7 +1,6 @@
 #!/usr/bin/env python
 import os
 import fnmatch
-import mimetypes
 import bottle
 from bottle import get, response, static_file, SimpleTemplate
 
@@ -84,7 +83,7 @@ def files(path):
     if ext in ['.rst', '']:
         mimetype = 'text/plain'
     else:
-        mimetype = mimetypes.guess_type(path)[0]
+        mimetype = 'auto'
     return static_file(path, root='.', mimetype=mimetype)
 
 @get('/')
