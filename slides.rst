@@ -20,7 +20,7 @@ Bottle
 http://bottlepy.org/
 
 
-Hello
+Hallo
 -----
 
 .. code-block:: python
@@ -174,21 +174,6 @@ Returverdier
 * HTTPError, HTTPResponse
 
 
-Apache eller ikke Apache
-------------------------
-
-.. code-block:: python
-
-    import bottle
-
-    if __name__ == '__main__':
-        # Standalone web server
-        bottle.run(reloader=True)
-    else:
-        # Running under WSGI
-        application = bottle.default_app()
-
-
 App
 ---
 
@@ -204,6 +189,21 @@ Lurt for litt større applikasjoner og for gjenbrukbarhet.
 
     parent_app = bottle.default_app()
     parent_app.mount("/demo", app)
+
+
+Apache eller ikke Apache
+------------------------
+
+.. code-block:: python
+
+    import bottle
+
+    if __name__ == '__main__':
+        # Standalone web server
+        bottle.run()
+    else:
+        # Running under WSGI
+        application = bottle.default_app()
 
 
 Debug og auto-reloading
