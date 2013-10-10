@@ -283,7 +283,7 @@ Flask
 
 Mye det samme, men basert på Werkzeug og Jinja2.
 
-.. code-block:: bash
+.. code-block:: python
 
     from flask import Flask
     app = Flask(__name__)
