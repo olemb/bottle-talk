@@ -299,8 +299,8 @@ Mye det samme, men basert på Werkzeug og Jinja2.
 Slutt
 -----
 
+`server.py <server.py>`_
+
 http://bottlepy.org/
 
 http://github.com/defnull/bottle/
-
-`server.py <server.py>`_
