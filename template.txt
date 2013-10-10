@@ -2,31 +2,12 @@
 %(head)s
 
 <script src="slides.js" type="text/javascript"></script>
-
-<style>
-#uit_triangle {
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 2;
-}
-
-#uit_triangle img {
-    height: 10ex;
-}
-
-#uit_logo {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    z-index: 2;
-}
-</style>
-
+<link rel="stylesheet" href="uit.css" type="text/css" />
 %(stylesheet)s
 %(body_prefix)s
 
 <div id="uit_triangle"><img src="uit_triangle.png"></div>
+<div id="uit_logo"><img src="uit_logo.png"></div>
 %(body_pre_docinfo)s
 %(docinfo)s
 %(body)s

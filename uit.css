@@ -1,0 +1,41 @@
+/*
+
+  UiT specific stuff
+
+  The height of the body is set to 100%, so when the logo is placed
+  absolute bottom right it will end up in the bottom right corner of
+  the screen.
+
+*/
+
+body {
+    height: 100%;
+}
+
+#uit_triangle {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    /*
+       This places the triangle in the top left of the viewport,
+       and not the body.
+    */
+    z-index: 2;
+}
+
+#uit_triangle img {
+    height: 10ex;
+}
+
+#uit_logo {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+#uit_logo img { 
+    height: 6ex;
+    padding-bottom: 3ex;
+    padding-right: 3ex;
+}
