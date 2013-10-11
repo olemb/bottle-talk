@@ -9,6 +9,11 @@ import fnmatch
 import bottle
 from bottle import get, response, static_file, SimpleTemplate
 
+@get('/')
+def slides():
+    return os.popen('`which rst2html || which rst2html.py`'
+	            ' --template=template.txt slides.rst')
+ 
 @get('/files')
 def file_list():
     return file_list_template.render(files=get_file_paths())
@@ -22,11 +27,6 @@ def files(path):
         mimetype = 'auto'
     return static_file(path, root='.', mimetype=mimetype)
 
-@get('/')
-def slides():
-    return os.popen('`which rst2html || which rst2html.py`'
-	            ' --template=template.txt slides.rst')
- 
 if __name__ == '__main__':
     bottle.debug(True)
     bottle.run(host='', reloader=True)
