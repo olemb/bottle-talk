@@ -71,6 +71,8 @@ def get_file_paths():
 
             files.append(path)
 
+    files.sort()
+
     return files
 
 @get('/slides.html')
