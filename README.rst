@@ -32,6 +32,8 @@ Make targets::
                 # (currently chromium-browser)
     make clean  # removes slides.html
 
+If you want the slides in ``index.html`` you can modify ``Makefile``.
+
 
 Viewing the slideshow
 ---------------------
