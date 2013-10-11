@@ -39,46 +39,26 @@ function prev() {
 
 function on_keydown(event)
 {
-    switch(event.keyCode) {
-    case 33:  // PgUp
-    case 38:  // Up
-    case 37:  // Left
-    case 66:  // b
-        prev();
-        break;
-    case 34:  // PgDn
-    case 40:  // Down
-    case 39:  // Right
-    case 32:  // Space
-        next();
-        break;
-    case 36:  // Home
-        first();
-        break;
-    case 35:  // End
-        last();
-        break;
+    var keymap = {
+        33: prev, // PgUp
+        38: prev, // Up
+        37: prev, // Left
+        66: prev,  // b
+        
+        34: next, // PgDn
+        40: next, // Down
+        39: next, // Right
+        32: next, // Space
+        
+        36: first, // Home
+        35: last,  // End
     }
+    keymap[event.keyCode]();
 }
 
 function on_mousedown(event) {
-    button = event.button;
-
-    switch(button) {
-    case 0:  // Left button
+    if(event.button == 0) {
         next();
-        break;
-    case 2:  // Right button
-        // prev();
-        break;
-
-    // Down should be next()
-    case 5:  // Scroll (up or down?)
-        next();
-        break;
-    case 6:
-        prev();
-        break;
     }
 }
 
