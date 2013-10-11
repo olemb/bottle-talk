@@ -9,7 +9,7 @@ file_list_template = SimpleTemplate("""
 <html>
 <head><title>Bottle</title></head>
 <link rel="stylesheet" href="uit/uit.css" type="text/css" />
-<link rel="stylesheet" href="slider/slides.css" type="text/css" />
+<link rel="stylesheet" href="lib/slides.css" type="text/css" />
 <body>
 
 <div id="uit_triangle"><img src="uit/triangle.png"></div>
@@ -77,7 +77,7 @@ def get_file_paths():
 
 @get('/slides.html')
 def slides():
-    return os.popen('slider/make_slides.sh')
+    return os.popen('lib/make_slides.sh')
 
 @get('/<path:path>')
 def files(path):
