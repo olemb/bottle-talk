@@ -1,9 +1,9 @@
 %(head_prefix)s
 %(head)s
 
-<script src="slider/slides.js" type="text/javascript"></script>
+<script src="lib/slides.js" type="text/javascript"></script>
 <link rel="stylesheet" href="uit/uit.css" type="text/css" />
-<link rel="stylesheet" href="slider/slides.css" type="text/css" />
+<link rel="stylesheet" href="lib/slides.css" type="text/css" />
 
 %(stylesheet)s
 %(body_prefix)s

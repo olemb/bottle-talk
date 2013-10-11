@@ -71,14 +71,8 @@ divs but the current one are hidden using css.
 Modifying the templates
 -----------------------
 
-``template.txt`` contains a template for ``rst2html``. You can insert
-javascript, css and other elements here. By default it is set up to
-include ``slider/slider.js`` and ``slider.slider.css``, but you can
-change these to style and rewrite the slide show as you like.
-
-The default ``template.txt`` includes an extra style sheet and some
-images in the template as a starting point. These reside in a
-subfolder for easy reuse.
+``template.txt`` contains a template for ``rst2html``. This can be
+used to insert custom style sheets and javascript.
 
 
 License
