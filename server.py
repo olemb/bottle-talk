@@ -1,8 +1,44 @@
 #!/usr/bin/env python
+"""
+Serves the presentation using Bottle.
+
+This server is written for the Bottle talk and is not a part of rstslider.
+"""
 import os
 import fnmatch
 import bottle
 from bottle import get, response, static_file, SimpleTemplate
+
+@get('/files')
+def file_list():
+    return file_list_template.render(files=get_file_paths())
+
+@get('/<path:path>')
+def files(path):
+    ext = os.path.splitext(path)[1]
+    if ext in ['.rst', '']:
+        mimetype = 'text/plain'
+    else:
+        mimetype = 'auto'
+    return static_file(path, root='.', mimetype=mimetype)
+
+@get('/')
+def slides():
+    return os.popen('`which rst2html || which rst2html.py`'
+	            ' --template=template.txt slides.rst')
+ 
+if __name__ == '__main__':
+    bottle.debug(True)
+    bottle.run(host='', reloader=True)
+else:
+    os.chdir(os.path.dirname(__file__))
+    application = bottle.default_app()
+
+
+
+#
+# File listing stuff.
+#
 
 file_list_template = SimpleTemplate("""
 <!doctype html>
@@ -16,21 +52,14 @@ file_list_template = SimpleTemplate("""
 <div id="uit_logo"><img src="uit/logo.png"></div>
 
 <div class="section">
-<h1>Bottle!</h1>
+<h1>Files</h1>
 
-<p><a href="slides.html" style="font-size: 400%">Start presentation</a></p>
-
-<p><a href="server.py">server.py</a></p>
-
-<h2>Files</h2>
+<p><a href="./">Back to presentation</a></p>
 
 <ul>
   % for file in files:
     <li>
        <a href="{{file}}">{{file}}</a>
-       % if file == 'slides.html':
-           (dynamically generated)
-       % end
     </li>
   % end
 </ul>
@@ -74,28 +103,3 @@ def get_file_paths():
     files.sort()
 
     return files
-
-@get('/slides.html')
-def slides():
-    return os.popen('lib/make_slides.sh')
-
-@get('/<path:path>')
-def files(path):
-    ext = os.path.splitext(path)[1]
-    if ext in ['.rst', '']:
-        mimetype = 'text/plain'
-    else:
-        mimetype = 'auto'
-    return static_file(path, root='.', mimetype=mimetype)
-
-@get('/')
-def file_list():
-    return file_list_template.render(files=get_file_paths())
-
-if __name__ == '__main__':
-    bottle.debug(True)
-    bottle.run(host='', reloader=True)
-else:
-    os.chdir(os.path.dirname(__file__))
-    application = bottle.default_app()
-

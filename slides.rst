@@ -301,6 +301,8 @@ Slutt
 
 `server.py <server.py>`_
 
+`files/ <files>`_
+
 http://bottlepy.org/
 
 http://github.com/defnull/bottle/
