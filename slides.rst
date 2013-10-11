@@ -85,7 +85,7 @@ Query
 
 ::
 
-    http://movie_database.somewhere/search?title=King+Kong
+    http://moviedb/search?title=King+Kong
 
 .. code-block:: python
 
