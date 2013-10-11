@@ -39,9 +39,3 @@ body {
     padding-bottom: 3ex;
     padding-right: 3ex;
 }
-
-table {
-    // Center the table.
-    margin-left: auto;
-    margin-right: auto;
-}

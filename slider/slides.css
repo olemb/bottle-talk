@@ -7,6 +7,13 @@ Stylesheet for use with Docutils/rst2html.
 Changes by Ole Martin Bjorndalen marked with "OLEMB".
 */
 
+/* OLEMB: center tables. */
+table.docutils {
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 html {
   font-size: 100%;
   -webkit-text-size-adjust: 100%;
