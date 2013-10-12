@@ -299,11 +299,7 @@ Mye det samme, men basert på Werkzeug og Jinja2.
 Eksempel
 --------
 
-`server.py <server.py>`_
-
-`slides.rst <slides.rst>`_
-
-`lib/slides.js <lib/slides.js>`_
+`files <files>`_
 
 
 Slutt
