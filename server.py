@@ -12,6 +12,7 @@ from bottle import get, response, static_file, SimpleTemplate
 @get('/')
 def slides():
     return os.popen('`which rst2html || which rst2html.py`'
+                    ' --stylesheet=""'
 	            ' --template=template.txt slides.rst')
  
 @get('/files')
