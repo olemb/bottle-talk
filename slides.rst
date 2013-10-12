@@ -296,14 +296,19 @@ Mye det samme, men basert på Werkzeug og Jinja2.
         app.run()
 
 
+Eksempel
+--------
+
+`server.py <server.py>`_
+
+`slides.rst <slides.rst>`_
+
+`lib/slides.js <lib/slides.js>`_
+
+
 Slutt
 -----
 
 http://bottlepy.org/
 
 http://github.com/defnull/bottle/
-
-
-`slides.rst <slides.rst>`_
-
-`lib/slides.js <lib/slides.js>`_
