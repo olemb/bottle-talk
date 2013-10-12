@@ -12,7 +12,7 @@ body {
     height: 100%;
 }
 
-#uit_triangle {
+#uitname {
     position: absolute;
     top: 0;
     left: 0;
@@ -24,17 +24,17 @@ body {
     z-index: 2;
 }
 
-#uit_triangle img {
+#uitname img {
     height: 14ex;
 }
 
-#uit_logo {
+#uitlogo {
     position: absolute;
     bottom: 0;
     right: 0;
 }
 
-#uit_logo img { 
+#uitlogo img { 
     height: 7ex;
     padding-bottom: 3ex;
     padding-right: 3ex;

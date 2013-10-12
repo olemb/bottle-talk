@@ -8,8 +8,8 @@
 %(stylesheet)s
 %(body_prefix)s
 
-<div id="uit_triangle"><img src="uit/triangle.png"></div>
-<div id="uit_logo"><img src="uit/logo.png"></div>
+<div id="uitname"><img src="uit/triangle.png"></div>
+<div id="uitlogo"><img src="uit/logo.png"></div>
 
 %(body_pre_docinfo)s
 %(docinfo)s
