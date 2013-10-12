@@ -188,7 +188,7 @@ Lurt for litt større applikasjoner og for gjenbrukbarhet.
         return 'Hello World'
 
     parent_app = bottle.default_app()
-    parent_app.mount("/demo", app)
+    parent_app.mount("/hello", app)
 
 
 Apache eller ikke Apache
