@@ -5,6 +5,8 @@ Ole Martin Bjørndalen
 
 \30. november 2013
 
+http://bottlepy.org/
+
 
 Bottle
 ------
@@ -17,7 +19,6 @@ Bottle
 
 * Python 2 / 3
 
-http://bottlepy.org/
 
 
 Hello World
@@ -310,5 +311,3 @@ Slutt
     $ pip install bottle
 
 http://bottlepy.org/
-
-http://github.com/defnull/bottle/
