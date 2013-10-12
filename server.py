@@ -52,7 +52,7 @@ def files():
 @get('/<path:path>')
 def files(path):
     ext = os.path.splitext(path)[1]
-    if ext in ['.rst', '.html', '']:
+    if ext in ['.rst', '.html', '', '.py']:
         mimetype = 'text/plain'
     else:
         mimetype = 'auto'
