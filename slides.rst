@@ -299,7 +299,7 @@ Mye det samme, men basert på Werkzeug og Jinja2.
 Eksempel
 --------
 
-`files <files>`_
+`Filer <files>`_
 
 
 Slutt
