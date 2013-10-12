@@ -11,7 +11,7 @@ Bottle
 
 * mikrorammeverk for små webapplikasjoner / tjenester
 
-* en fil, ingen eksterne avhengigheter (lett å bundle)
+* en fil, ingen eksterne avhengigheter
 
 * kjører på WSGI ("whisky")
 
@@ -304,6 +304,10 @@ Eksempel
 
 Slutt
 -----
+
+::
+
+    $ pip install bottle
 
 http://bottlepy.org/
 
