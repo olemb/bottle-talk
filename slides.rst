@@ -150,7 +150,7 @@ JSON
     @bottle.post('/some/service')
     def handler():
         # Dictionary:
-        data = json.load(bottle.request.body)
+        data = bottle.request.json
         ...
         return {'id': req['id'],
                 'result': result,
