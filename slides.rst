@@ -274,7 +274,7 @@ JSON-RPC
         def add(self, a, b):
             return a + b
     
-    bottle_jsonrpc('/math', Methods())
+    bottle_jsonrpc.register('/math', Methods())
 
 http://github.com/olemb/bottle_jsonrpc
 
