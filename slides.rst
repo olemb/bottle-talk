@@ -3,7 +3,7 @@ Bottle
 
 Ole Martin Bjørndalen
 
-\30. november 2013
+\29. November 2013
 
 http://bottlepy.org/
 
@@ -11,11 +11,11 @@ http://bottlepy.org/
 Bottle
 ------
 
-* mikrorammeverk for små webapplikasjoner / tjenester
+* micro web-framework
 
-* en fil, ingen eksterne avhengigheter
+* one file, no external dependencies
 
-* kjører på WSGI ("whisky")
+* runs on top of WSGI ("whisky")
 
 * Python 2 / 3
 
@@ -35,8 +35,8 @@ Hello World
     run(host='localhost', port=8080)
 
 
-Litt mer avansert
------------------
+A Bit More
+----------
 
 .. code-block:: python
 
@@ -47,7 +47,8 @@ Litt mer avansert
     def index(name='Stranger'):
         return template('Hello {{name}}!', name=name)
 
-Du kan bruke andre template-bibloteker. (Jinja2!)
+Included SimpleTemplate library, but you can use others.
+
 
 
 GET / POST
@@ -66,7 +67,7 @@ GET / POST
         ...
 
 
-Request / response
+Request / Response
 ------------------
 
 .. code-block:: python
@@ -113,9 +114,11 @@ Forms
         if check_login(username, password):
             ...
 
+(Or `WTForms <http://wtforms.readthedocs.org/>`_)
 
-Statiske filer
---------------
+
+Static Files
+------------
 
 .. code-block:: python
 
@@ -157,27 +160,8 @@ JSON
                 'error': None}
 
 
-Returverdier
-------------
-
-===============  ============
-Returverdi       Resultat
-===============  ============
-dictionary       JSON
-'', False, None  Content-Length: 0
-unicode string   UTF-8 (or response.content_type / .charset)
-byte string      binary data
-file object      file.read()
-iterable         
-HTTPError        error
-HTTPResponse     (response)
-===============  ============
-
-
 App
 ---
-
-Lurt for litt større applikasjoner og for gjenbrukbarhet.
 
 .. code-block:: python
 
@@ -190,9 +174,11 @@ Lurt for litt større applikasjoner og for gjenbrukbarhet.
     parent_app = bottle.default_app()
     parent_app.mount("/hello", app)
 
+For larger applications and reusability.
 
-Apache eller ikke Apache
-------------------------
+
+Standalone or not Standalone
+----------------------------
 
 .. code-block:: python
 
@@ -206,7 +192,16 @@ Apache eller ikke Apache
         application = bottle.default_app()
 
 
-Debug og auto-reloading
+Apache Config
+-------------
+
+::
+
+  WSGIDaemonProcess yourapp user=www-data group=www-data processes=1 threads=5
+  WSGIScriptAlias /ole/bottle /path/to/server.py
+
+
+Debug og Auto Reloading
 -----------------------
 
 .. code-block:: python
@@ -214,53 +209,21 @@ Debug og auto-reloading
     bottle.debug(True)
     bottle.run(reloader=True)
 
+(Standalone server only.)
 
-Plugins
--------
 
-* Cork (autentisering)
+Plugins and Useful Libraries
+----------------------------
 
-* SQLite
+* WTForms
+
+* Beaker (caching)
+
+* Cork (authentication)
+
+* SQLite (plugin)
 
 * Sqlalchemy
-
-* MongoDB
-
-* Memcache
-
-* ...
-
-
-Cork
-----
-
-.. code-block:: python
-
-    from cork import Cork
-
-    auth = Cork('example_conf')
-
-    @post('/login')
-    def login():
-        username = request.POST.get('user', '')
-        password = request.POST.get('password', '')
-        auth.login(username, password,
-                   success_redirect='/',
-                   fail_redirect='/login')
-
-
-Annet
------
-
-* sessions
-
-* cookies
-
-* greenlets
-
-* event callbacks (tornado)
-
-* websockets
 
 
 JSON-RPC
@@ -282,7 +245,7 @@ http://github.com/olemb/bottle_jsonrpc
 Flask
 -----
 
-Mye det samme, men basert på Werkzeug og Jinja2.
+Very similar, but based on Werkzeug og Jinja2.
 
 .. code-block:: python
 
@@ -297,14 +260,14 @@ Mye det samme, men basert på Werkzeug og Jinja2.
         app.run()
 
 
-Eksempel
---------
+Example
+-------
 
 `Filer <files>`_
 
 
-Slutt
------
+The End
+-------
 
 ::
 
