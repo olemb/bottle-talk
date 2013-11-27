@@ -71,7 +71,7 @@ View Decorator
 .. code-block:: python
 
     @get('/hello/<name>')
-    @view('hello_template')  # Loaded from file
+    @view('hello_template')
     def hello(name='World'):
         return dict(name=name)
 
