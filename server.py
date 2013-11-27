@@ -49,13 +49,16 @@ def files():
     template = SimpleTemplate(open('files.html'))
     return template.render(files=get_files())
 
-@get('/<path:path>')
-def files(path):
+def get_mimetype():
     ext = os.path.splitext(path)[1]
     if ext in ['.rst', '.html', '', '.py']:
-        mimetype = 'text/plain'
+        return 'text/plain'
     else:
-        mimetype = 'auto'
+        return 'auto'
+
+@get('/<path:path>')
+def files(path):
+    mimetype=get_mimetype(path)
     return static_file(path, root='.', mimetype=mimetype)
 
 if __name__ == '__main__':
