@@ -76,22 +76,6 @@ View Decorator
         return dict(name=name)
 
 
-GET / POST
-----------
-
-.. code-block:: python
-
-    from bottle import get, post
-    
-    @get('/login')
-    def login():
-        ...
-
-    @post('/login')
-    def do_login():
-        ...
-
-
 Request / Response
 ------------------
 
@@ -99,11 +83,11 @@ Request / Response
 
     from bottle import request, response
 
-    @get('/something')
-    def something():
+    @get('/food')
+    def food():
         cookie = request.get_cookie():
         ...
-        response.content_type = 'text/html
+        response.content_type = 'text/html'
         response.charset = 'latin9'
 
 
@@ -172,17 +156,15 @@ JSON
 
 .. code-block:: python
 
-    import json
-    import bottle
+    @get('/food')
+    def food():
+        # Dict is automatically converted to JSON.
+        return {'type': 'Pizza', 'price': 'Free'}
 
-    @bottle.post('/some/service')
-    def handler():
-        # Dictionary:
-        data = bottle.request.json
+    @post('/service')
+    def service():
+        data = request.json
         ...
-        return {'id': req['id'],
-                'result': result,
-                'error': None}
 
 
 App
