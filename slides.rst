@@ -272,7 +272,7 @@ Very similar, but based on Werkzeug og Jinja2.
 Example
 -------
 
-`Filer <files>`_
+The program serving this presentation: `files <files>`_
 
 
 The End
