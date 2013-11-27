@@ -35,20 +35,44 @@ Hello World
     run(host='localhost', port=8080)
 
 
-A Bit More
-----------
+Handlers
+--------
+
+.. code-block:: python
+
+    @get('/hello/')
+    @get('/hello/<name>')
+    def hello(name='Stranger'):
+        ...
+    
+    @post('/food')
+
+    @route('/food')  # GET and POST
+    
+    @route('/food', method='GET')
+
+
+Templates
+---------
 
 .. code-block:: python
 
     from bottle import template
 
-    @route('/')
-    @route('/hello/<name>')
-    def index(name='Stranger'):
-        return template('Hello {{name}}!', name=name)
+    @get('/hello/<name>')
+    def hello(name='World'):
+        return template('hello_template', name=name)
 
-Included SimpleTemplate library, but you can use others.
 
+View Decorator
+--------------
+
+.. code-block:: python
+
+    @get('/hello/<name>')
+    @view('hello_template')  # Loaded from file
+    def hello(name='World'):
+        return dict(name=name)
 
 
 GET / POST
