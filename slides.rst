@@ -212,16 +212,14 @@ Debug og Auto Reloading
 (Standalone server only.)
 
 
-Plugins and Useful Libraries
-----------------------------
+Useful Additions
+----------------
 
 * WTForms
 
 * Beaker (caching)
 
 * Cork (authentication)
-
-* SQLite (plugin)
 
 * Sqlalchemy
 
