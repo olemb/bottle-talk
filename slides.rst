@@ -221,7 +221,7 @@ Useful Additions
 
 * Cork (authentication)
 
-* Sqlalchemy
+* Sqlalchemy (object relational mapper)
 
 
 JSON-RPC
