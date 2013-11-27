@@ -85,7 +85,7 @@ Request / Response
 
     @get('/food')
     def food():
-        cookie = request.get_cookie():
+        cookie = request.get_cookie()
         ...
         response.content_type = 'text/html'
         response.charset = 'latin9'
