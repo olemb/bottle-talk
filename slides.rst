@@ -35,22 +35,21 @@ Hello World
     run(host='localhost', port=8080)
 
 
-Handlers
---------
+Routing
+-------
 
 .. code-block:: python
 
-    @get('/hello/')
-    @get('/hello/<name>')
-    def hello(name='Stranger'):
-        ...
+    @get('/food')
     
     @post('/food')
 
-    @route('/food')  # GET and POST
-    
     @route('/food', method='GET')
 
+    @route('/food')
+    def food():
+        if request.method == 'GET': 
+            ...
 
 Templates
 ---------
@@ -62,6 +61,8 @@ Templates
     @get('/hello/<name>')
     def hello(name='World'):
         return template('hello_template', name=name)
+
+This renders `template.tpl` (from `bottle.TEMPLATE_PATH`).
 
 
 View Decorator
