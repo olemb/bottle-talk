@@ -215,13 +215,17 @@ Debug og Auto Reloading
 Useful Additions
 ----------------
 
-* WTForms
-
 * Beaker (caching)
 
 * Cork (authentication)
 
+* Jinja2 (more advanced templates)
+
 * Sqlalchemy (object relational mapper)
+
+* WTForms
+
+(Of course, no longer one file.)
 
 
 JSON-RPC
