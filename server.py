@@ -49,7 +49,7 @@ def files():
     template = SimpleTemplate(open('files.html'))
     return template.render(files=get_files())
 
-def get_mimetype():
+def get_mimetype(path):
     ext = os.path.splitext(path)[1]
     if ext in ['.rst', '.html', '', '.py']:
         return 'text/plain'
@@ -58,8 +58,7 @@ def get_mimetype():
 
 @get('/<path:path>')
 def files(path):
-    mimetype=get_mimetype(path)
-    return static_file(path, root='.', mimetype=mimetype)
+    return static_file(path, root='.', mimetype=get_mimetype(path))
 
 if __name__ == '__main__':
     bottle.debug(True)
