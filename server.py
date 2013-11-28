@@ -46,12 +46,12 @@ def slides():
  
 @get('/files')
 def files():
-    template = SimpleTemplate(open('files.html'))
+    template = SimpleTemplate(open('files.tpl'))
     return template.render(files=get_files())
 
 def get_mimetype(path):
     ext = os.path.splitext(path)[1]
-    if ext in ['.rst', '.html', '', '.py']:
+    if ext in ['', '.html', '.rst', '.tpl', '.py']:
         return 'text/plain'
     else:
         return 'auto'
