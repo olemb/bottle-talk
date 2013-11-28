@@ -254,7 +254,7 @@ http://github.com/olemb/bottle_jsonrpc
 Flask
 -----
 
-Very similar, but based on Werkzeug og Jinja2.
+Much the same, but based on Werkzeug og Jinja2.
 
 .. code-block:: python
 
@@ -267,6 +267,23 @@ Very similar, but based on Werkzeug og Jinja2.
 
     if __name__ == "__main__":
         app.run()
+
+
+importd
+-------
+
+Wrapper around Django.
+
+.. code-block:: python
+
+    from importd import d
+
+    @d('/')
+    def idx(request):
+        return 'index.html'
+
+    if __name__ == '__main__':
+        d.main()
 
 
 Example
