@@ -5,6 +5,12 @@
 <link rel="stylesheet" href="lib/slides.css" type="text/css" />
 <body>
 
+<div id="uitname"><img src="uit/name.png"></div>
+<div id="uitlogo"><img src="uit/logo.png"></div>
+
+<div class="section" id="files">
+<h1>Files</h1>
+
 <p><a href="./">Back to presentation</a></p>
 
 <ul>
@@ -14,6 +20,8 @@
     </li>
   % end
 </ul>
+
+</div>
 
 </body>
 </html>
