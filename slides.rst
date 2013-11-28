@@ -223,9 +223,9 @@ Debug og Auto Reloading
 Useful Additions
 ----------------
 
-* Beaker (caching)
+* Beaker (caching) (@cache decorator)
 
-* Cork (authentication)
+* Cork (authentication) (@auth decorator)
 
 * Jinja2 (more advanced templates)
 
