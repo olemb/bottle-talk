@@ -13,7 +13,7 @@ Bottle
 
 * micro web-framework
 
-* one file, no external dependencies
+* one file (`bottle.py`), no external dependencies
 
 * runs on top of WSGI ("whisky")
 
