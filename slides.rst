@@ -184,8 +184,8 @@ App
 For larger applications and reusability.
 
 
-Standalone or not Standalone
-----------------------------
+Running the App
+---------------
 
 .. code-block:: python
 
