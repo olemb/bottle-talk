@@ -195,7 +195,7 @@ Running the App
         # Standalone web server
         bottle.run()
     else:
-        # Running under another web server
+        # Running under another web server (with WSGI)
         application = bottle.default_app()
 
 
