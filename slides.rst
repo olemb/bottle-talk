@@ -11,14 +11,13 @@ http://bottlepy.org/
 Bottle
 ------
 
-* micro web-framework
+* micro web-framework for Python
 
 * one file (`bottle.py`), no external dependencies
 
 * runs on top of WSGI ("whisky")
 
-* Python 2 / 3
-
+* supports Python 3
 
 
 Hello World
