@@ -204,8 +204,9 @@ Apache Config
 
 ::
 
-  WSGIDaemonProcess yourapp user=www-data group=www-data \
-                    processes=1 threads=5
+  WSGIDaemonProcess yourapp \
+      user=www-data group=www-data \
+      processes=1 threads=5
   WSGIScriptAlias /ole/bottle/ /path/to/server.py
 
 
