@@ -288,12 +288,6 @@ Wrapper around Django.
         d.main()
 
 
-Example
--------
-
-The program serving this presentation: `files <files>`_
-
-
 The End
 -------
 
