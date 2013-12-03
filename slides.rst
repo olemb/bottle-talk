@@ -105,6 +105,8 @@ Query
         if title == 'King Kong':
             ...
 
+Default value is an empty string.
+
 
 Forms
 -----
